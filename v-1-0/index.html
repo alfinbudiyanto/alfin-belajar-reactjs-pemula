@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar DOM - ReactJs</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // seleksi elemen div dengan id 'app'
+      const app = document.getElementById('app')
+
+      // buat elemen h1 baru
+      const header = document.createElement('h1')
+
+      // buat text node untuk elemen h1
+      const headerContent = document.createTextNode('Belajar ReactJs bareng Pak Dhika @WPU🚀')
+
+      // append text ke dalam h1
+      header.appendChild(headerContent)
+
+      // simpan elemen h1 di dalam div
+      app.appendChild(header)
+    </script>
+  </body>
+</html>
