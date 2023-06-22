@@ -3,17 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Latihan ReactJs</title>
+    <title>Belajar ReactJs</title>
+
+    <!-- ReactJs -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <!-- Babel/jsx -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
-    <div class="root"></div>
+    <div id="root"></div>
 
     <script type="text/babel">
       const container = document.getElementById('root')
       const root = ReactDOM.createRoot(container)
+
+      function Header() {
+        return (<h1>- COUNTER -</h1>);
+      }
+
+      function HomePage() {
+        const [likes, setLikes] = React.useState(0)
+
+        function kurang() {
+          setLikes(likes - 1)
+        }
+
+        function tambah() {
+          setLikes(likes + 1)
+        }
+
+        function reset() {
+          setLikes(likes * 0)
+        }
+
+        return (
+          <>
+            <button onClick={kurang}>-</button>
+            <span>({likes})</span>
+            <button onClick={tambah}>+</button>
+            <br />
+            <button onClick={reset}>RESET</button>
+          </>
+        )
+      }
+      root.render(<HomePage />)
     </script>
   </body>
 </html>
