@@ -41,14 +41,19 @@
         return (
           <>
             <button onClick={kurang}>-</button>
-            <span>({likes})</span>
+            <span>{likes}</span>
             <button onClick={tambah}>+</button>
             <br />
             <button onClick={reset}>RESET</button>
           </>
         )
       }
-      root.render(<HomePage />)
+      root.render(
+        <>
+          <Header/>
+          <HomePage />
+        </>
+      )
     </script>
   </body>
 </html>
