@@ -56,7 +56,7 @@ export default function Game() {
   }
 
   function handlePlay(nextSquares) {
-    const nextHistory = [...history.slice(0, currentMove + 1, nextSquares)];
+    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
   }
@@ -64,7 +64,7 @@ export default function Game() {
   const moves = history.map((squares, move) => {
     let description = "";
     if (move > 0) {
-      description = "Gp to move #" + move;
+      description = "Go to move #" + move;
     } else {
       description = "Go to game start";
     }
